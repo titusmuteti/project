@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiFillHeart, AiOutlineShoppingCart, AiOutlineDelete} from "react-icons/ai";
 
 
-const ProductCard = ({product, action}) => {
+const ProductCard = ({product, action, removeCard}) => {
+  const [color, setColor] = useState(true)
 
   const handleClick = () => {
     alert (`${product.title} successfully added to cart`)
@@ -11,6 +12,12 @@ const ProductCard = ({product, action}) => {
   }
 
   const handleLike = () => {
+    const newColor = color
+    //className={{color:color ? 'bg-red-600' : 'bg-white'}}
+  }
+
+  const handleDelete = () => {
+    removeCard(product);
   }
 
   return (
@@ -33,9 +40,9 @@ const ProductCard = ({product, action}) => {
       </div>
 
     <div className='px-2 pt-4'>
-        <span className='inline-block px-3 py-1 pl-10'><AiFillHeart className='text-red-600 text-4xl' onClick={handleLike}/></span>
+        <span className='inline-block px-3 py-1 pl-10'><AiFillHeart className='text-4xl' onClick={handleLike}/></span>
         <span className='inline-block px-3 py-1 pl-10' onClick={handleClick}><AiOutlineShoppingCart className='text-black text-4xl'/></span>
-        <span className='inline-block px-3 py-1 pl-10'><AiOutlineDelete className='text-black text-4xl'/></span>
+        <span className='inline-block px-3 py-1 pl-10'><AiOutlineDelete onClick={handleDelete} className='text-black text-4xl'/></span>
       </div>
     </div>
     </>

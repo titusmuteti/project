@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductCollection from '../Components/ProductCollection';
-import Cart from './Cart';
+import Cart from './Reviews';
 
 const Products = () => {
 const [productsList, setProductsList] = useState([]);
@@ -9,6 +9,19 @@ const [selectedProduct, setSelectedProduct] = useState([]);
 const addToCart = (product) => {
   const newProductCollection = selectedProduct.filter(card => card !== product)
   setSelectedProduct([...newProductCollection, product])
+}
+
+const removeCardPermanently = (product) => {
+  const newFilteredProducts = productsList.filter(card => card !== product)
+  
+  setProductsList(newFilteredProducts)
+  // console.log(newFilteredProducts);
+
+  fetch(`https://fierce-ridge-31455.herokuapp.com/products/${product.id}`, {
+    method: "DELETE"
+  })
+  .then(res => res.json())
+  .then(product => console.log(product))
 }
 
 useEffect(()=> {
@@ -20,8 +33,7 @@ useEffect(()=> {
 })
   return (
     <>
-    <ProductCollection products={productsList} action={addToCart} />
-    <Cart selectedProduct={selectedProduct} />
+    <ProductCollection products={productsList} action={addToCart}  removeCard={removeCardPermanently} />
     </>
   )
 }

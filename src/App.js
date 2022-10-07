@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Sell from "./pages/Sell";
 import Products from "./pages/Products";
 import Footer from "./Components/Footer";
-import Cart from "./pages/Cart"
+import Reviews from "./pages/Reviews"
 
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
           <Products />
         </Route> 
 
-        <Route exact path={"/cart"}>
-          <Cart />
+        <Route exact path={"/reviews"}>
+          <Reviews />
         </Route>
 
         <Route exact path={"/sell"}>

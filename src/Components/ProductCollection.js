@@ -1,15 +1,18 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 
-const ProductCollection = ({products, action}) => {
+const ProductCollection = ({products, action, removeCard}) => {
   //console.log(products);
   const displayProducts = products.map(product => {
     return (
-      <ProductCard key={product.id} product={product} action={action} />
+      <ProductCard key={product.id} product={product} action={action} removeCard={removeCard} />
     )
   })
   return (
     <>
+    <div>
+      <h1>Comments</h1>
+    </div>
     <h1 className='text-4xl'>Shop with us</h1>
     <div className='grid items-center p-10 h-auto w-auto'>
       <div className='flex border border-purple-200 rounded'>
