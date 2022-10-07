@@ -1,6 +1,6 @@
 {
+  "homepage": "https://titusmuteti.github.io/project",
   "name": "e-business-app",
-  "homepage": "https//titusmuteti.github.io/e-business-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
