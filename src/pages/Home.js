@@ -26,7 +26,7 @@ const Home = () => {
       <input className='bg-indigo-200 mt-10 text-2xl ml-10' type="submit" value="Login"/>
       </form>
 
-      <a href='' className='text-teal-600 underline'> Don't have an account? SignUp</a>
+      <a href='/' className='text-teal-600 underline'> Don't have an account? SignUp</a>
     </div>
 
     

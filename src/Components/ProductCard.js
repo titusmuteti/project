@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiFillHeart, AiOutlineShoppingCart, AiOutlineDelete} from "react-icons/ai";
-import Cart from '../pages/Cart';
 
 
 const ProductCard = ({product, action}) => {

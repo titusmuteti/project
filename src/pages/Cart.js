@@ -1,5 +1,4 @@
 import React from 'react';
-import ProductCard from '../Components/ProductCard';
 
 const Cart = () => {
   return (

@@ -8,7 +8,7 @@ const Footer = () => {
               <span className="text-lg uppercase tracking-widest"> For more information
               on Class Collection services Call: </span>
 
-              <a className="block text-2xl hover:opacity-75 sm:text-3xl" href="">
+              <a className="block text-2xl hover:opacity-75 sm:text-3xl" href="/">
                 0123456789
               </a>
             </p>
@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="mt-5 flex gap-3 pl-96 ml-96">
               <a
                 className="rounded-full border border-white/25 p-2 hover:opacity-75"
-                href=""
+                href="/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -38,7 +38,7 @@ const Footer = () => {
 
               <a
                 className="rounded-full border border-white/25 p-2 hover:opacity-75"
-                href=""
+                href="/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -60,7 +60,7 @@ const Footer = () => {
 
               <a
                 className="rounded-full border border-white/25 p-2 hover:opacity-75"
-                href=""
+                href="/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -82,9 +82,9 @@ const Footer = () => {
           
           <div className="text-sm text-gray-300 sm:flex sm:items-center sm:justify-between">
             <div className="flex gap-10 mt-5 ml-96 pl-80">
-              <a className="hover:opacity-75" href=""> Privacy Policy </a>
-              <a className="hover:opacity-75" href=""> Terms & Conditions </a>
-              <a className="hover:opacity-75" href=""> Returns Policy </a>
+              <a className="hover:opacity-75" href="/"> Privacy Policy </a>
+              <a className="hover:opacity-75" href="/"> Terms & Conditions </a>
+              <a className="hover:opacity-75" href="/"> Returns Policy </a>
             </div>  
           </div>
 

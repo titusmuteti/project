@@ -6,6 +6,7 @@ import Products from "./pages/Products";
 import Footer from "./Components/Footer";
 import Cart from "./pages/Cart"
 
+
 function App() {
   return (
     <>
