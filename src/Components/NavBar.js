@@ -7,7 +7,7 @@ const NavBar = () => {
         <h1 className='ClassCollection text-center text-xl text-white italic font-sans'>CLASS COLLECTIONS LTD</h1>
         <ul>
             <li>
-                <a href='/' className='AiFillHome'>
+                <a href='/project' className='AiFillHome'>
                     Home <AiFillHome/>
                 </a>
             </li>

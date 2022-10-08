@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AiFillHeart, AiOutlineShoppingCart, AiOutlineDelete} from "react-icons/ai";
 
 
 const ProductCard = ({product, action, removeCard}) => {
-  const [color, setColor] = useState(true)
+  //const [color, setColor] = useState(true)
 
   const handleClick = () => {
     alert (`${product.title} successfully added to cart`)
@@ -12,7 +12,7 @@ const ProductCard = ({product, action, removeCard}) => {
   }
 
   const handleLike = () => {
-    const newColor = color
+    //const newColor = color
     //className={{color:color ? 'bg-red-600' : 'bg-white'}}
   }
 

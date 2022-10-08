@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import ProductCollection from '../Components/ProductCollection';
-import Cart from './Reviews';
 
 const Products = () => {
 const [productsList, setProductsList] = useState([]);

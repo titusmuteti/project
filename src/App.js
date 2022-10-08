@@ -13,20 +13,20 @@ function App() {
     <Router>
     <NavBar />
       <Switch>
-        <Route exact path={"/"}>
-          <Home />
+        <Route exact path={"/project"}>
+          element = {<Home />}
         </Route>
 
         <Route exact path={"/products"}>
-          <Products />
+          {<Products />}
         </Route> 
 
         <Route exact path={"/reviews"}>
-          <Reviews />
+          {<Reviews />}
         </Route>
 
         <Route exact path={"/sell"}>
-          <Sell />
+          {<Sell />}
         </Route>       
       </Switch>
     </Router>
