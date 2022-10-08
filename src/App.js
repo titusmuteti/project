@@ -14,7 +14,7 @@ function App() {
     <NavBar />
       <Switch>
         <Route exact path={"/project"}>
-          element = {<Home />}
+         {<Home />}
         </Route>
 
         <Route exact path={"/products"}>
