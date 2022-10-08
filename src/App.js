@@ -17,15 +17,15 @@ function App() {
          {<Home />}
         </Route>
 
-        <Route exact path={"/products"}>
+        <Route exact path={"/products"} component={Products}>
           {<Products />}
         </Route> 
 
-        <Route exact path={"/reviews"}>
+        <Route exact path={"/reviews"} component={Reviews}>
           {<Reviews />}
         </Route>
 
-        <Route exact path={"/sell"}>
+        <Route exact path={"/sell"} component={Sell}>
           {<Sell />}
         </Route>       
       </Switch>
