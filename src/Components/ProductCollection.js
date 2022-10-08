@@ -11,7 +11,6 @@ const ProductCollection = ({products, action, removeCard}) => {
   return (
     <>
     <div>
-      <h1>Comments</h1>
     </div>
     <h1 className='text-4xl'>Shop with us</h1>
     <div className='grid items-center p-10 h-auto w-auto'>

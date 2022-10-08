@@ -2,27 +2,13 @@ import React, { useState } from 'react'
 
 const About = () => {
 
-  const [productPost, setProductPost] = useState("")
-  // const [title, setTitle] = useState([]);
-  // const [category, setCategory] = useState([]);
-  // const [price, setPrice] = useState([]);
-  // const [image, setImage] = useState([]);
-   
-  // const handleTitleChange = (e) => {
-  //   setTitle(e.target.value);
-  // }
+  const [productPost, setProductPost] = useState({
+    title: "",
+    category: "",
+    price: "",
+    Image: ""
+  })
 
-  // const handleCategoryChange = (e) => {
-  //   setCategory(e.target.value);
-  // }
-
-  // const handleImageChange = (e) => {
-  //   setPrice(e.target.value);
-  // }
-
-  // const handlePriceChange = (e) => {
-  //   setImage(e.target.value);
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +22,7 @@ const About = () => {
     })
     .then(res => res.json())
     .then(product => {
+      console.log(product);
       return(product)
     })
   }
@@ -80,7 +67,7 @@ const About = () => {
         <label>
           Image URL:
         </label><br/>
-          <input type="text" className='border-4 border-black mt-5'
+          <input type="file" className='border-4 border-black mt-5'
           onChange={handleChange}/><br/>
           
         <input className='bg-indigo-200 mt-24 rounded-lg' type="submit" value="Submit"/>

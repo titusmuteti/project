@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Comments = () => {
+const Comments = ({comment}) => {
+  console.log(comment);
   return (
-    <div>Comments</div>
+    <div>Comments{comment}</div>
   )
 }
 

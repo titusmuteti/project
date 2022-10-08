@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Comments from '../Components/Comments';
 
 const Reviews = () => {
   const [comment, setComment] = useState([]);
@@ -9,7 +10,8 @@ const Reviews = () => {
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    console.log(comment);
+    //console.log(comment);
+    return <Comments comment={comment} />   
   }
 
   return (
