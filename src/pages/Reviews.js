@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Comments from '../Components/Comments';
 
 const Reviews = () => {
   const [comment, setComment] = useState([]);
+  const [displayComments, setDisplayComments] = useState([]);
+
+  useEffect(()=> {
+    fetch("https://gentle-taiga-85011.herokuapp.com/comments")
+    .then(res=> res.json())
+    .then(comments => setDisplayComments(comments))
+  })
 
   const handleChange =(e)=> {
     setComment({...comment, [e.target.value] : e.target.value})
@@ -16,7 +23,9 @@ const Reviews = () => {
 
   return (
     <div >
-      How do you feel about our products? Leave a comment
+      <h1 className='mt-2 mb-5 font-bold'>How do you feel about our product/services? Leave a comment</h1>
+
+      <Comments displayComments={displayComments} />
 
       <div className="App">
       <header className="App-header mt-5">
@@ -24,7 +33,7 @@ const Reviews = () => {
       <img className="h-20 pl-10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBC-9OSf41AWvLERVefeZdV1FKvWc6SDqdXA&usqp=CAU" alt="" />
       <h4 className='text-sm text-orange-600' >Add comment</h4>
         <label >
-          Did you buy a product
+          Did you make a purchase?
         </label><br/>
         <select type="select" className='border-4 border-black mt-0' onChange={handleChange}>
           <option value='yes'>YES</option>
