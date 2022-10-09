@@ -2,8 +2,8 @@ import React from 'react'
 import CommentCard from './CommentCard'
 
 const Comments = ({displayComments}) => {
- const displayComment = displayComments.map(comment => {
-  return <CommentCard key={comment.id} comment={comment} />
+ const displayComment = displayComments.map((comment, index) => {
+  return <CommentCard key={index} comment={comment} />
  })
   return (
     <div className='container mx-auto border-solid border-4 border-indigo-400 pl-2'>
