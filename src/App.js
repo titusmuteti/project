@@ -9,18 +9,18 @@ import Reviews from "./pages/Reviews"
 function App() {
   return (
     <>
-    <Router basename="https://titusmuteti.github.io/project">
+    <Router>
     <NavBar />
       <Switch>
         <Route exact path={"/project"}>
          {<Home />}
         </Route>
 
-        <Route  path={"/products"} component={Products}>
+        <Route exact path={"/products"} component={Products}>
           {<Products />}
         </Route> 
 
-        <Route  path={"/reviews"} component={Reviews}>
+        <Route exact path={"/reviews"} component={Reviews}>
           {<Reviews />}
         </Route>
       
