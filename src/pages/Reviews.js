@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Comments from '../Components/Comments';
 
 const Reviews = () => {
   const [comment, setComment] = useState([]);
   const [posts, setPosts] = useState('');
 
+  const firstRef = useRef(null);
+  const secondRef = useRef(null);
+  const lastRef = useRef(null);
+
   const removeCardPermanently = (product) => {
     const newFilteredProducts = comment.filter(card => card !== product)
-    
     setComment(newFilteredProducts)
-    // console.log(newFilteredProducts);
-  
     fetch(`https://gentle-taiga-85011.herokuapp.com/comments/${product.id}`, {
       method: "DELETE"
     })
-    .then(res => res.json())
-    .then(product => console.log(product))
+    .then(res => res.json());
   }
 
   useEffect(()=> {
@@ -37,10 +37,12 @@ const Reviews = () => {
         'Content-Type': 'application/json' 
       },
       body: JSON.stringify(posts)
-    })
+    }, [])
     .then(res=>res.json())
-    .then(post=>(post))
-  }
+    .then(post=> setPosts([...posts, post]));
+
+    e.target.reset();
+    }
 
   return (
     <div >
@@ -54,14 +56,14 @@ const Reviews = () => {
         <img className="h-40 pl-0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBC-9OSf41AWvLERVefeZdV1FKvWc6SDqdXA&usqp=CAU" alt="" />
         <h4 className='text-sm text-orange-600' >Add comment</h4>
 
-          <input type="text" placeholder="First Name" name='name' className='border-4 border-black mt-2'
-          onChange={handleChange}/><br/>
+          <input type="text" placeholder="First Name" name='name' ref={firstRef} className='border-4 border-black mt-2'
+          onChange={handleChange} /><br/>
 
-          <input type="text" placeholder="Made a purchase? Yes/No" name='choice' className='border-4 border-black mt-2'
-          onChange={handleChange}/><br/>
+          <input type="text" placeholder="Made a purchase? Yes/No" name='choice' ref={secondRef} className='border-4 border-black mt-2'
+          onChange={handleChange} /><br/>
 
-          <input type="text" placeholder="add comment" name='comment' className='border-4 border-black mt-2'
-          onChange={handleChange}/><br/>
+          <input type="text" placeholder="add comment" name='comment' ref={lastRef} className='border-4 border-black mt-2'
+          onChange={handleChange} /><br/>
           
           <input className='bg-indigo-200 mt-2 rounded-lg pl-5 pr-5' type="submit" value="POST"/>
         </form>

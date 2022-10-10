@@ -13,7 +13,7 @@ useEffect(()=> {
   .then(products => setProductsList(products))
   //console.log(productsList);
   .catch(err => console.log(err))
-})
+}, [])
 
 const visibleProducts = productsList.filter(product=>{
   return product.title.toLowerCase().includes(search.toLowerCase())
