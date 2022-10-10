@@ -93,3 +93,6 @@ img{
  color: black;
 }
 
+a.isActive {
+  color: white;
+}

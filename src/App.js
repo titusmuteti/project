@@ -23,7 +23,7 @@ function App() {
         <Route exact path={"/reviews"} component={Reviews}>
           {<Reviews />}
         </Route>
-       
+      
       </Switch>
     </Router>
 
