@@ -9,7 +9,7 @@ import Reviews from "./pages/Reviews"
 function App() {
   return (
     <>
-    <Router>
+    <Router basename="https://titusmuteti.github.io/project">
     <NavBar />
       <Switch>
         <Route exact path={"/project"}>
