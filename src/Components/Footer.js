@@ -89,8 +89,7 @@ const Footer = () => {
           </div>
 
           <p className="mt-5 text-xs text-gray-500">
-              Class collections is not liable to goods sold on the platform. Ensure to buy products from reliable 
-              dealers and sellers.
+              Goods once sold cannot be returned. Payments to be made on delivery.
           </p>
         <p className="mt-4 text-center">&copy; 2022 Class Collection.</p>
       </div>

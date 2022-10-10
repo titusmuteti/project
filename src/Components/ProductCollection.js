@@ -5,7 +5,9 @@ const ProductCollection = ({products, action, removeCard}) => {
 
   const displayProducts = products.map(product => {
     return (
+      <>
       <ProductCard key={product.id} product={product} action={action} removeCard={removeCard} />
+      </>
     )
   })
 
