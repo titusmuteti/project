@@ -6,12 +6,13 @@ const ProductCard = ({product, action, removeCard}) => {
   //const [color, setColor] = useState(true)
 
   const handleClick = () => {
-    alert (`${product.title} successfully added to cart`)
+    alert (`"${product.title}" successfully added to cart`)
     action(product)
     // console.log(product);
   }
 
   const handleLike = () => {
+    alert(`You liked "${product.title}"`)
     //const newColor = color
     //className={{color:color ? 'bg-red-600' : 'bg-white'}}
   }

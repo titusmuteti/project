@@ -23,10 +23,6 @@ const NavBar = () => {
                     Reviews 
                 </a>
             </li>
-
-            <li>
-                <a href='/sell'>Sell</a>
-            </li>
         </ul>
 
         

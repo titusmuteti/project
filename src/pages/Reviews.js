@@ -4,7 +4,6 @@ import Comments from '../Components/Comments';
 const Reviews = () => {
   const [comment, setComment] = useState([]);
   const [posts, setPosts] = useState('');
-  // console.log(posts);
 
   useEffect(()=> {
     fetch("https://gentle-taiga-85011.herokuapp.com/comments")
@@ -39,16 +38,19 @@ const Reviews = () => {
       <div className="App">
       <header className="App-header mt-5">
       <form className='form' onSubmit={handleSubmit}>
-      <img className="h-24 pl-0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBC-9OSf41AWvLERVefeZdV1FKvWc6SDqdXA&usqp=CAU" alt="" />
-      <h4 className='text-sm text-orange-600' >Add comment</h4>
+        <img className="h-24 pl-0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBC-9OSf41AWvLERVefeZdV1FKvWc6SDqdXA&usqp=CAU" alt="" />
+        <h4 className='text-sm text-orange-600' >Add comment</h4>
 
-        <label>
-          Comment:
-        </label><br/>
+          <input type="text" placeholder="First Name" name='name' className='border-4 border-black mt-2'
+          onChange={handleChange}/><br/>
+
+          <input type="text" placeholder="Made a purchase? Yes/No" name='comment' className='border-4 border-black mt-2'
+          onChange={handleChange}/><br/>
+
           <input type="text" placeholder="add comment" name='comment' className='border-4 border-black mt-2'
           onChange={handleChange}/><br/>
           
-        <input className='bg-indigo-200 mt-2 rounded-lg' type="submit" value="Comment"/>
+          <input className='bg-indigo-200 mt-2 rounded-lg pl-5 pr-5' type="submit" value="POST"/>
         </form>
       </header>
       </div>
