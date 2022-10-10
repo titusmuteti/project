@@ -1,9 +1,9 @@
 import React from 'react'
 import CommentCard from './CommentCard'
 
-const Comments = ({displayComments}) => {
+const Comments = ({displayComments, removeCard}) => {
  const displayComment = displayComments.map((comment, index) => {
-  return <CommentCard key={index} comment={comment} />
+  return <CommentCard key={index} comment={comment} removeCard={removeCard}/>
  })
   return (
     <div className='container mx-auto w-96 border-solid border-4 border-indigo-400 pl-2'>

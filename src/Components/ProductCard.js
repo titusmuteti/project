@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { AiFillHeart, AiOutlineShoppingCart, AiOutlineDelete} from "react-icons/ai";
+import { AiFillHeart, AiOutlineShoppingCart} from "react-icons/ai";
 
 
 const ProductCard = ({product, action, removeCard}) => {
@@ -14,11 +14,7 @@ const ProductCard = ({product, action, removeCard}) => {
     setColor(color => !color)
   }
 
-  const btnColor = color ? 'text-white' : 'text-red-600'
-
-  const handleDelete = () => {
-    removeCard(product);
-  }
+  const btnColor = color ? 'text-black' : 'text-red-600'
 
   return (
     <>
@@ -40,9 +36,8 @@ const ProductCard = ({product, action, removeCard}) => {
       </div>
 
     <div className='px-2 pt-4'>
-        <span className='inline-block px-3 py-1 pl-10 text-4xl'><AiFillHeart className={btnColor} onClick={handleLike}/></span>
-        <span className='inline-block px-3 py-1 pl-10' onClick={handleClick}><AiOutlineShoppingCart className='text-black text-4xl'/></span>
-        <span className='inline-block px-3 py-1 pl-10'><AiOutlineDelete onClick={handleDelete} className='text-black text-4xl'/></span>
+        <span className='inline-block px-3 py-1 pl-20 text-4xl'><AiFillHeart className={btnColor} onClick={handleLike}/></span>
+        <span className='inline-block px-3 py-1 pl-20' onClick={handleClick}><AiOutlineShoppingCart className='text-black text-4xl'/></span>
       </div>
     </div>
     </>

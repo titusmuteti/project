@@ -7,19 +7,6 @@ const [productsList, setProductsList] = useState([]);
 const [search, setSearch] = useState('');
 
 
-const removeCardPermanently = (product) => {
-  const newFilteredProducts = productsList.filter(card => card !== product)
-  
-  setProductsList(newFilteredProducts)
-  // console.log(newFilteredProducts);
-
-  fetch(`https://fierce-ridge-31455.herokuapp.com/products/${product.id}`, {
-    method: "DELETE"
-  })
-  .then(res => res.json())
-  .then(product => console.log(product))
-}
-
 useEffect(()=> {
   fetch("https://fierce-ridge-31455.herokuapp.com/products")
   .then(res => res.json())
@@ -34,7 +21,7 @@ const visibleProducts = productsList.filter(product=>{
   return (
     <>
     <Search setSearch={setSearch} search={search} />
-    <ProductCollection products={visibleProducts} removeCard={removeCardPermanently} />
+    <ProductCollection products={visibleProducts} />
     </>
   )
 }

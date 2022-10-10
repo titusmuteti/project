@@ -5,6 +5,19 @@ const Reviews = () => {
   const [comment, setComment] = useState([]);
   const [posts, setPosts] = useState('');
 
+  const removeCardPermanently = (product) => {
+    const newFilteredProducts = comment.filter(card => card !== product)
+    
+    setComment(newFilteredProducts)
+    // console.log(newFilteredProducts);
+  
+    fetch(`https://gentle-taiga-85011.herokuapp.com/comments/${product.id}`, {
+      method: "DELETE"
+    })
+    .then(res => res.json())
+    .then(product => console.log(product))
+  }
+
   useEffect(()=> {
     fetch("https://gentle-taiga-85011.herokuapp.com/comments")
     .then(res=> res.json())
@@ -33,7 +46,7 @@ const Reviews = () => {
     <div >
       <h1 className='mt-2 mb-5 font-bold flex'>How do you feel about our product/services? Leave a comment</h1>
 
-      <Comments displayComments={comment} />
+      <Comments displayComments={comment} removeCard={removeCardPermanently}/>
 
       <div className="App">
       <header className="App-header mt-5">
