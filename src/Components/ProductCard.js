@@ -2,19 +2,23 @@ import React, {useState} from 'react';
 import { AiFillHeart, AiOutlineShoppingCart} from "react-icons/ai";
 
 
-const ProductCard = ({product, action, removeCard}) => {
+const ProductCard = ({product}) => {
   const [color, setColor] = useState(true);
+  const [blurred, setBlurred] = useState(false);
 
   const handleClick = () => {
-    alert (`"${product.title}" successfully added to cart`)
-    action(product)
+    // alert (`"${product.title}" successfully added to cart`);
+    setBlurred(blurred => !blurred)
+    return alertMessage 
   }
 
   const handleLike = () => {
     setColor(color => !color)
   }
 
-  const btnColor = color ? 'text-black' : 'text-red-600'
+  const btnColor = color ? 'text-black' : 'text-red-600';
+  const btnBlur = blurred ? 'blur-sm': '';
+  const alertMessage = blurred ? alert(`"${product.title}" successfully added to cart`):'null';
 
   return (
     <>
@@ -37,7 +41,7 @@ const ProductCard = ({product, action, removeCard}) => {
 
     <div className='px-2 pt-4'>
         <span className='inline-block px-3 py-1 pl-20 text-4xl'><AiFillHeart className={btnColor} onClick={handleLike}/></span>
-        <span className='inline-block px-3 py-1 pl-20' onClick={handleClick}><AiOutlineShoppingCart className='text-black text-4xl'/></span>
+        <span className='inline-block px-3 py-1 pl-20 text-black text-4xl' onClick={handleClick}><AiOutlineShoppingCart className={btnBlur} /></span>
       </div>
     </div>
     </>
