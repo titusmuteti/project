@@ -16,11 +16,11 @@ function App() {
          {<Home />}
         </Route>
 
-        <Route exact path={"/products"} component={Products}>
+        <Route  path={"/products"} component={Products}>
           {<Products />}
         </Route> 
 
-        <Route exact path={"/reviews"} component={Reviews}>
+        <Route  path={"/reviews"} component={Reviews}>
           {<Reviews />}
         </Route>
       
