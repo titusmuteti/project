@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillHome, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiFillHome, AiOutlineShoppingCart, AiOutlineComment } from "react-icons/ai";
 
 const NavBar = () => {
   return (
@@ -20,7 +20,7 @@ const NavBar = () => {
 
             <li>
                 <a href='/reviews'>
-                    Reviews 
+                    Reviews <AiOutlineComment />
                 </a>
             </li>
         </ul>

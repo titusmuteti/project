@@ -31,20 +31,20 @@ const Reviews = () => {
 
   return (
     <div >
-      <h1 className='mt-2 mb-5 font-bold'>How do you feel about our product/services? Leave a comment</h1>
+      <h1 className='mt-2 mb-5 font-bold flex'>How do you feel about our product/services? Leave a comment</h1>
 
       <Comments displayComments={comment} />
 
       <div className="App">
       <header className="App-header mt-5">
       <form className='form' onSubmit={handleSubmit}>
-        <img className="h-24 pl-0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBC-9OSf41AWvLERVefeZdV1FKvWc6SDqdXA&usqp=CAU" alt="" />
+        <img className="h-40 pl-0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBC-9OSf41AWvLERVefeZdV1FKvWc6SDqdXA&usqp=CAU" alt="" />
         <h4 className='text-sm text-orange-600' >Add comment</h4>
 
           <input type="text" placeholder="First Name" name='name' className='border-4 border-black mt-2'
           onChange={handleChange}/><br/>
 
-          <input type="text" placeholder="Made a purchase? Yes/No" name='comment' className='border-4 border-black mt-2'
+          <input type="text" placeholder="Made a purchase? Yes/No" name='choice' className='border-4 border-black mt-2'
           onChange={handleChange}/><br/>
 
           <input type="text" placeholder="add comment" name='comment' className='border-4 border-black mt-2'

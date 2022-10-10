@@ -1,7 +1,6 @@
 import React from 'react'
 
 const CommentCard = ({comment}) => {
-  console.log(comment);
     // console.log(comment);
   return (
     <div className='container mx-auto mb-10 shadow-lg'>

@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ProductCollection from '../Components/ProductCollection';
+import Search from '../Components/Search';
 
 const Products = () => {
 const [productsList, setProductsList] = useState([]);
-const [selectedProduct, setSelectedProduct] = useState([]);
+const [search, setSearch] = useState('');
 
-const addToCart = (product) => {
-  const newProductCollection = selectedProduct.filter(card => card !== product)
-  setSelectedProduct([...newProductCollection, product])
-}
 
 const removeCardPermanently = (product) => {
   const newFilteredProducts = productsList.filter(card => card !== product)
@@ -30,9 +27,14 @@ useEffect(()=> {
   //console.log(productsList);
   .catch(err => console.log(err))
 })
+
+const visibleProducts = productsList.filter(product=>{
+  return product.title.toLowerCase().includes(search.toLowerCase())
+})
   return (
     <>
-    <ProductCollection products={productsList} action={addToCart}  removeCard={removeCardPermanently} />
+    <Search setSearch={setSearch} search={search} />
+    <ProductCollection products={visibleProducts} removeCard={removeCardPermanently} />
     </>
   )
 }
