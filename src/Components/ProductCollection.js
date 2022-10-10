@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ProductCard from './ProductCard';
 
 const ProductCollection = ({products, action, removeCard}) => {
